@@ -14,11 +14,13 @@ insert into room (name) values ('green'), ('gray'), ('red');
 
 create table person (
 id serial primary key,
-name varchar(50),
+username varchar(100),
+password varchar(100),
 role_id int not null references roles(id)
 );
 
-insert into person (name, role_id) values ('Mr. Good', 1), ('Adam777', 1), ('Admin', 2);
+insert into person (username, password, role_id)
+values ('Mr. Good', 'abcdf', 1), ('Adam777', 'abc', 1), ('Admin', 'abcd', 2);
 
 create table message (
 id serial primary key,
